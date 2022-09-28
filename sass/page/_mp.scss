@@ -129,7 +129,7 @@ a.more {
             width: 233px;
             height: 270px;
             z-index: -2;
-            opacity: .7;
+            opacity: 1;
             background-image: url('../images/dynamic_left_icon07.png');
             background-repeat: no-repeat;
             background-position: 0 0;
@@ -138,7 +138,7 @@ a.more {
             animation-iteration-count: infinite;
             animation-timing-function: ease-in;
             z-index: 99;
-            @include screen('xs_mobile'){
+            @include screen('xs_mobile') {
                 display: none;
             }
             @keyframes dynamic07_in {
@@ -1160,10 +1160,11 @@ a.more {
                     margin: 0 1.16% 1.5em;
                     box-sizing: border-box;
                     background: rgb(254, 254, 254);
-                    background: linear-gradient(65deg, rgba(254, 254, 254, 1) 0%, rgba(245, 250, 254, 1) 42%, rgba(249, 253, 254, 1) 73%, rgba(246, 251, 254, 1) 100%);
+                    background: linear-gradient(65deg, rgba(254, 254, 254, .6) 0%, rgba(245, 250, 254, .6) 42%, rgba(249, 253, 254, .6) 73%, rgba(246, 251, 254, 1) 100%);
                     border-radius: 5px;
                     transition: .5s;
                     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    backdrop-filter: blur(10px);
                     @include screen('tablet') {
                         flex-basis: 47%;
                         margin: 0 1.5% 1.5em;
@@ -1178,23 +1179,23 @@ a.more {
                     }
                     &:nth-child(2) {
                         background: rgb(252, 253, 255);
-                        background: linear-gradient(6deg, rgba(252, 253, 255, 1) 0%, rgba(239, 248, 254, 1) 53%, rgba(235, 245, 254, 1) 100%);
+                        background: linear-gradient(6deg, rgba(252, 253, 255, .6) 0%, rgba(239, 248, 254, .6) 53%, rgba(235, 245, 254, .6) 100%);
                     }
                     &:nth-child(3) {
                         background: rgb(252, 253, 255);
-                        background: linear-gradient(349deg, rgba(252, 253, 255, 1) 0%, rgba(242, 249, 254, 1) 53%, rgba(242, 249, 254, 1) 100%);
+                        background: linear-gradient(349deg, rgba(252, 253, 255, .6) 0%, rgba(242, 249, 254, .6) 53%, rgba(242, 249, 254, .6) 100%);
                     }
                     &:nth-child(4) {
                         background: rgb(254, 254, 255);
-                        background: linear-gradient(42deg, rgba(254, 254, 255, 1) 0%, rgba(237, 247, 253, 1) 100%);
+                        background: linear-gradient(42deg, rgba(254, 254, 255, .6) 0%, rgba(237, 247, 253, .6) 100%);
                     }
                     &:nth-child(5) {
                         background: rgb(241, 248, 254);
-                        background: linear-gradient(29deg, rgba(241, 248, 254, 1) 2%, rgba(253, 254, 255, 1) 52%, rgba(245, 250, 254, 1) 100%);
+                        background: linear-gradient(29deg, rgba(241, 248, 254, .6) 2%, rgba(253, 254, 255, .6) 52%, rgba(245, 250, 254, .6) 100%);
                     }
                     &:nth-child(6) {
                         background: rgb(255, 255, 255);
-                        background: linear-gradient(321deg, rgba(255, 255, 255, 1) 0%, rgba(238, 247, 254, 1) 53%, rgba(249, 253, 255, 1) 100%);
+                        background: linear-gradient(321deg, rgba(255, 255, 255, .6) 0%, rgba(238, 247, 254, .6) 53%, rgba(249, 253, 255, .6) 100%);
                     }
                     a {
                         display: block;
@@ -1236,7 +1237,7 @@ a.more {
         background: linear-gradient(90deg, rgba(150, 207, 244, 0.18391106442577032) 0%, rgba(255, 255, 255, 0.8365721288515406) 27%);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         border-radius: 5px;
-        margin-bottom:2em;
+        margin-bottom: 2em;
         .statistics_tabs {
             padding: 15px 0 15px 5px;
             display: flex;
