@@ -1,0 +1,125 @@
+footer {
+    box-sizing: border-box;
+    @include clearfix;
+    text-align: left;
+    font-size: 1em;
+    padding: 1.5em 0 1em;
+    background-color: #fff;
+    position:relative;
+    z-index: 1;
+    .container {
+        @include gutter;
+        >div {
+            padding-bottom: 1em;
+        }
+        display: flex;
+        @include screen('tablet') {
+            flex-wrap: wrap;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    .footer_logo {
+        flex: 0 0 240px;
+        text-align: center;
+        @include screen('mobile'){
+            flex:1 1 auto;
+            flex-basis:100%;
+        }
+    }
+    .footer_info {
+        flex: 1 1 auto;
+        flex-basis: calc(100% - 440px);
+        @include screen('mobile'){
+            flex:1 1 auto;
+            flex-basis:100%;
+        }
+    }
+    .footer_icon {
+        flex: 0 0 200px;
+        @include screen('tablet') {
+            flex: 1 1 100%;
+            text-align: right;
+        }
+        @include screen('mobile'){
+            text-align: center;
+        }
+    }
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        display: flex;
+        @include screen('mobile') {
+           justify-content: center;
+        }
+        @media(max-width:480px ){
+            display: block;
+            margin-bottom: 10px;
+        }
+        li {
+            flex: 0 1 auto;
+            margin: 0px 5px 5px 0px;
+            @media(max-width:480px ){
+                flex: 1 1 auto;
+                flex-basis: 100%;
+                margin: 0px 0px 5px 0px;
+            }
+            a {
+                display: block;
+                padding: 0em 1em 0 0;
+                color: $primaryColor;
+                text-align: center;
+                transition: all .3s ease-out;
+                &:hover,
+                &:focus {
+                    color: $aHover;
+                }
+                 @media(max-width:480px ){
+                    border-bottom:1px solid #eee;
+                    padding: 0.5em 1em ;
+                 }
+            }
+        }
+    }
+    p {
+        line-height: 1.65em;
+        color: $color-gray;
+        font-size: 0.938em;
+        padding: 0;
+        margin: 0;
+         @include screen('mobile') {
+           text-align: center;
+        }
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: $primaryColor;
+            padding: 0 .5em;
+        }
+    }
+    .footer_icon {
+        a {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            &:focus {
+                box-shadow: 0 0px 0px 2px #fec003 ;
+               
+            }
+        }
+        img {
+            max-width: 120px;
+        }
+    }
+}
