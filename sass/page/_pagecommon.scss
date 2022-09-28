@@ -184,8 +184,8 @@
                 a {
                     display: block;
                     padding: 0 10px;
-                    @media(max-width: 480px){
-                         padding: 0 5px;
+                    @media(max-width: 480px) {
+                        padding: 0 5px;
                     }
                 }
             }
@@ -338,7 +338,7 @@
     }
     .dynamic04 {
         position: absolute;
-        top: 450px;
+        top: 500px;
         right: -150px;
         width: 266px;
         height: 294px;
@@ -350,22 +350,22 @@
         animation-timing-function: ease-in;
         @keyframes dynamic04 {
             0% {
-                top: 450px;
+                top: 500px;
                 right: -150px;
             }
             50% {
-                top: 480px;
+                top: 530px;
                 right: -130px;
             }
             100% {
-                top: 450px;
-                right:-150px;
+                top: 500px;
+                right: -150px;
             }
         }
     }
     .dynamic05 {
         position: absolute;
-        bottom:-20px;
+        bottom: -20px;
         right: 100px;
         width: 113px;
         height: 139px;
@@ -377,7 +377,7 @@
         animation-timing-function: ease-in;
         @keyframes dynamic05 {
             0% {
-                bottom:-20px;
+                bottom: -20px;
                 right: 100px;
                 transform: rotate(0deg);
             }
@@ -387,8 +387,8 @@
                 transform: rotate(35deg);
             }
             100% {
-                bottom:-20px;
-                right:100px;
+                bottom: -20px;
+                right: 100px;
                 transform: rotate(0deg);
             }
         }
@@ -502,9 +502,8 @@
     }
     @include screen('tablet') {
         right: -95%;
-        
     }
-    @media(max-width: 850px){
+    @media(max-width: 850px) {
         right: -100%;
     }
     @include screen('mobile') {
@@ -558,7 +557,6 @@
                 top: -450px;
             }
         }
-        
     }
     .dynamic11 {
         position: relative;
