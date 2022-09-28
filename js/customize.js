@@ -241,7 +241,7 @@ $(function() {
         // alt+S 查詢
         if (e.altKey && e.keyCode == 83) {
             $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
-            $('.search').find('input[type="text"]').focus();
+            $('.header_functionbtn_block .search_btn .search').show().find('input[type="text"]').focus();
         }
         // alt+U header
         if (e.altKey && e.keyCode == 85) {
