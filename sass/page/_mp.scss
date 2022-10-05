@@ -125,8 +125,8 @@ a.more {
         &:before {
             content: '';
             position: absolute;
-            bottom: -150px;
-            left: 0px;
+            bottom: -80px;
+            left: -20px;
             width: 233px;
             height: 270px;
             z-index: -2;
@@ -145,19 +145,19 @@ a.more {
             @keyframes dynamic07_in {
                 0% {
                     transform: rotate(0deg);
-                    left: 0;
+                    left: -20px;
                 }
                 30% {
                     transform: rotate(-20deg);
-                    left: -30px;
+                    left: -50px;
                 }
                 70% {
                     transform: rotate(20deg);
-                    left: -30px;
+                    left: -50px;
                 }
                 100% {
                     transform: rotate(0deg);
-                    left: 0px;
+                    left:-20px;
                 }
             }
         }
@@ -182,6 +182,7 @@ a.more {
             display: block;
             font-family: 'Arya', sans-serif;
             font-weight: 700;
+            line-height:1.3em;
         }
         .explain_block {
             font-size: 2em;

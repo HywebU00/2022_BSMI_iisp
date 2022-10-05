@@ -1,7 +1,14 @@
 // 自動產生編號：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
-
 // 選項次層
 .sub_menu {
+    background-color: rgba(255, 255, 255, .4);
+    border: 1px solid #fff;
+    padding: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0 auto 2em;
     ul, ol {
         display: flex;
         flex-direction: row;
@@ -15,11 +22,9 @@
         flex: 1 1 48%;
         margin-bottom: 10px;
         border-radius: 5px;
-       
         &:nth-child(odd) {
-            margin-right:10px;
+            margin-right: 10px;
         }
-        
         @include screen('mobile') {
             flex: 1 1 100%;
             &:nth-child(odd) {
@@ -29,11 +34,12 @@
         a {
             border-radius: 4px;
             border: 2px solid #DDD;
+            background-color: #fff;
             padding: 1em 1em 1em 2.5em;
             display: block;
             vertical-align: top;
             position: relative;
-            height: 100%;  
+            height: 100%;
             box-sizing: border-box;
             @include aSetting_nocolor;
             // @include text-overflow;
@@ -49,7 +55,7 @@
             }
             &:hover,
             &:focus {
-               border: 2px solid $primaryColor;
+                border: 2px solid $primaryColor;
                 color: $primaryColor;
             }
         }

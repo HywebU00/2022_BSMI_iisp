@@ -8,15 +8,19 @@
             margin: 0px 3px 3px 0px;
             display: block;
             float: left;
+            font-size: 1.063em;
         }
     }
     a {
-        border: 1px solid #CCC;
+        border: 1px solid rgb(255, 130, 15);
         padding: .4em 1em;
         display: block;
-        color: #333;
+        
         box-sizing: border-box;
         border-radius:4px;
+         background: rgb(255, 130, 15);
+                background: linear-gradient(180deg, rgba(255, 130, 15, 1) 0%, rgba(246, 104, 0, 1) 100%);
+                color: $primaryColor;
         &:hover,
         &:focus {
             color: #FFF;
