@@ -1155,9 +1155,9 @@ a.more {
                 list-style-type: none;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
                 li {
-                    flex: 1 1 auto;
+                    flex: 0 0 auto;
                     flex-basis: 31%;
                     margin: 0 1.16% 1.5em;
                     box-sizing: border-box;
@@ -1168,6 +1168,7 @@ a.more {
                     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                     backdrop-filter: blur(10px);
                      -webkit-backdrop-filter: blur(10px);
+                    
                     @include screen('tablet') {
                         flex-basis: 47%;
                         margin: 0 1.5% 1.5em;
@@ -1176,10 +1177,7 @@ a.more {
                         flex-basis: 100%;
                         margin: 0 0 1.5em;
                     }
-                    &:hover {
-                        background: #FFE1D1;
-                        transform: scale(1.08);
-                    }
+                    
                     &:nth-child(2) {
                         background: rgb(252, 253, 255);
                         background: linear-gradient(6deg, rgba(252, 253, 255, .6) 0%, rgba(239, 248, 254, .6) 53%, rgba(235, 245, 254, .6) 100%);
@@ -1199,6 +1197,10 @@ a.more {
                     &:nth-child(6) {
                         background: rgb(255, 255, 255);
                         background: linear-gradient(321deg, rgba(255, 255, 255, .6) 0%, rgba(238, 247, 254, .6) 53%, rgba(249, 253, 255, .6) 100%);
+                    }
+                    &:hover {
+                        background: #FFE1D1;
+                        transform: scale(1.08);
                     }
                     a {
                         display: block;
