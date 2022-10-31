@@ -31,6 +31,7 @@
         &.active {
             color: #FFF;
             @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+            border: 1px solid darken($primaryColor, 15);
         }
         span {
             font-size: .813em;
