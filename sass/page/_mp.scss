@@ -157,7 +157,7 @@ a.more {
                 }
                 100% {
                     transform: rotate(0deg);
-                    left:-20px;
+                    left: -20px;
                 }
             }
         }
@@ -182,7 +182,7 @@ a.more {
             display: block;
             font-family: 'Arya', sans-serif;
             font-weight: 700;
-            line-height:1.3em;
+            line-height: 1.3em;
         }
         .explain_block {
             font-size: 2em;
@@ -1167,8 +1167,7 @@ a.more {
                     transition: .5s;
                     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                     backdrop-filter: blur(10px);
-                     -webkit-backdrop-filter: blur(10px);
-                    
+                    -webkit-backdrop-filter: blur(10px);
                     @include screen('tablet') {
                         flex-basis: 47%;
                         margin: 0 1.5% 1.5em;
@@ -1177,7 +1176,6 @@ a.more {
                         flex-basis: 100%;
                         margin: 0 0 1.5em;
                     }
-                    
                     &:nth-child(2) {
                         background: rgb(252, 253, 255);
                         background: linear-gradient(6deg, rgba(252, 253, 255, .6) 0%, rgba(239, 248, 254, .6) 53%, rgba(235, 245, 254, .6) 100%);
@@ -1245,7 +1243,6 @@ a.more {
         margin-bottom: 2em;
         .statistics_tabs {
             padding: 15px 0 15px 5px;
-            display: flex;
             background: rgb(0, 106, 193);
             background: linear-gradient(180deg, rgba(0, 106, 193, 1) 0%, rgba(12, 135, 209, 1) 100%);
             border-radius: 5px 5px 0 0;
@@ -1362,7 +1359,7 @@ a.more {
         background: rgb(177, 227, 255);
         background: linear-gradient(119deg, rgba(177, 227, 255, 0.7917542016806722) 14%, rgba(114, 204, 255, 0.06346288515406162) 100%);
         backdrop-filter: blur(10px);
-         -webkit-backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         .subscription_email {
             max-width: 1200px;
             margin: 0 auto;
