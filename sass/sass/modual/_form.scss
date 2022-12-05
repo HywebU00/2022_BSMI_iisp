@@ -1244,22 +1244,22 @@ input[type="mail"],
 input[type="number"] {
     &::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
-        color: darken($color-gray, 20);
+          color: #6f7d9a;
     }
 
     &::-moz-placeholder {
         /* Firefox 19+ */
-        color: darken($color-gray, 20);
+          color: #6f7d9a;
     }
 
     &:-ms-input-placeholder {
         /* IE 10+ */
-        color: darken($color-gray, 20);
+          color: #6f7d9a;
     }
 
     &:-moz-placeholder {
         /* Firefox 18- */
-        color: darken($color-gray, 20);
+          color: #6f7d9a;
     }
 }
 
