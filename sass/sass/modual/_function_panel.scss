@@ -69,7 +69,7 @@ div.function{
             margin: 0 0px 0px 3px;
             flex:0 0 auto;
             button, a {
-                font-size: .813em;
+                font-size:0.938em;
                 display: block;
                 padding: .2em 1em;
                 background: $function_color;
@@ -189,15 +189,22 @@ div.function{
         display: flex;
         li {
             margin: 0px 3px 3px;
-            flex:0 0 32px;
+            flex:0 0 40px;
             a{
                 display:block;
-                height: 32px;
+                height: 40px;
+                width:40px;
+                background-color:#fff;
+                border-radius:50%;
+                &:focus{
+                   
+                    box-shadow: 0 0px 0px 2px #fec003 ;
+                }
             }
             @include screen('tablet') {
                 margin: 0px 1px 2px;
-                width: 32px;
-                height: 32px;
+                width: 40px;
+                height: 40px;
             }
             img {
                 width: 100%;
