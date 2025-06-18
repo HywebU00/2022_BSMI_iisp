@@ -1,347 +1,347 @@
 .fatfooter {
-    @extend %clearfix;
-    overflow: hidden;
-    padding-bottom: 30px;
-    margin: 0 auto;
-    background-image: url('../images/fatfooter_bg.png');
+  @extend %clearfix;
+  overflow: hidden;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  background-image: url('../images/fatfooter_bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center -50px;
+  min-height: 400px;
+  padding-top: 30px;
+  position: relative;
+  @include screen('mobile') {
+    background: rgb(116, 163, 209);
+    background: linear-gradient(0deg, rgba(116, 163, 209, 1) 0%, rgba(235, 240, 249, 1) 100%);
+    min-height: inherit;
+  }
+  @include screen('xs_mobile') {
+    padding: 50px 0;
+  }
+  &:before {
+    content: '';
+    background-image: url('../images/fatfooter_bgleft.png');
     background-repeat: no-repeat;
-    background-position: center -50px;
-    min-height: 400px;
-    padding-top: 30px;
-    position: relative;
+    background-position: center;
+    width: 334px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    filter: blur(4px);
+    opacity: 0.5;
+    @include screen('tablet') {
+      display: none;
+    }
+  }
+  &:after {
+    content: '';
+    background-image: url('../images/fatfooter_bgright.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 285px;
+    height: 319px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    animation-name: fatfooterright;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    @keyframes fatfooterright {
+      0% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 20px;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
     @include screen('mobile') {
-        background: rgb(116, 163, 209);
-        background: linear-gradient(0deg, rgba(116, 163, 209, 1) 0%, rgba(235, 240, 249, 1) 100%);
-        min-height: inherit;
+      background-size: 70%;
+      right: -50px;
+      @keyframes fatfooterright {
+        0% {
+          top: -50px;
+          bottom: auto;
+        }
+        50% {
+          top: -40px;
+          bottom: auto;
+        }
+        100% {
+          top: -50px;
+          bottom: auto;
+        }
+      }
     }
     @include screen('xs_mobile') {
-        padding: 50px 0;
+      display: none;
     }
+  }
+  .container {
+    overflow: hidden;
+    box-sizing: border-box;
+    @include gutter(120px);
+    @include screen('mobile') {
+      @include gutter(60px);
+    }
+  }
+  // 按鈕
+  .btn-fatfooter {
+    font-size: 1em;
+    display: block;
+    min-width: 6em;
+    color: #fff;
+    border: none;
+    background: $aHover;
+    position: absolute;
+    right: 1%;
+    z-index: 90;
+    text-indent: -9999px;
+    border-radius: 4px;
     &:before {
-        content: '';
-        background-image: url('../images/fatfooter_bgleft.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 334px;
-        height: 400px;
-        position: absolute;
-        left: 0;
-        bottom: -30px;
-        filter: blur(4px);
-        opacity: 0.5;
-        @include screen('tablet') {
-            display: none;
-        }
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      border-left: none;
+      border-bottom: none;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 12px;
+      margin-left: -6px;
+      transition: 0.3s ease-out;
     }
-    &:after {
-        content: '';
-        background-image: url('../images/fatfooter_bgright.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 285px;
-        height: 319px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-        animation-name: fatfooterright;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in;
-        @keyframes fatfooterright {
-            0% {
-                bottom: 0;
-            }
-            50% {
-                bottom: 20px;
-            }
-            100% {
-                bottom: 0;
-            }
-        }
-        @include screen('mobile') {
-            background-size: 70%;
-            right: -50px;
-            @keyframes fatfooterright {
-                0% {
-                    top: -50px;
-                    bottom:auto;
-                }
-                50% {
-                    top: -40px;
-                    bottom:auto;
-                }
-                100% {
-                    top: -50px;
-                    bottom:auto;
-                }
-            }
-        }
-        @include screen('xs_mobile') {
-            display: none;
-        }
+    &:hover,
+    &:focus {
+      background: darken($aHover, 10);
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
     }
-    .container {
-        overflow: hidden;
-        box-sizing: border-box;
-        @include gutter(120px);
-        @include screen('mobile') {
-            @include gutter(60px);
-        }
+    &.close {
+      &:before {
+        transform: rotate(135deg) !important;
+        top: 5px;
+      }
     }
-    // 按鈕
-    .btn-fatfooter {
-        font-size: 1em;
-        display: block;
-        min-width: 6em;
-        color: #FFF;
-        border: none;
-        background: $aHover;
-        position: absolute;
-        right: 1%;
-        z-index: 90;
-        text-indent: -9999px;
-        border-radius: 4px;
-        &:before {
-            content: "";
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border: 2px solid #FFF;
-            border-left: none;
-            border-bottom: none;
-            transform: rotate(-45deg);
-            left: 50%;
-            top: 12px;
-            margin-left: -6px;
-            transition: .3s ease-out;
-        }
-        &:hover,
-        &:focus {
-            background: darken($aHover, 10);
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            box-shadow: none;
-            outline: none;
-            border: none;
-            cursor: pointer;
-        }
-        &.close {
-            &:before {
-                transform: rotate(135deg) !important;
-                top: 5px;
-            }
-        }
+  }
+  nav {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding: 3em 0 0 0em;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+    @include screen('mobile') {
+      display: none;
     }
-    nav {
-        overflow: hidden;
-        display: block;
-        position: relative;
-        padding: 3em 0 0 0em;
-        box-sizing: border-box;
-        margin-bottom: 2em;
-        @include screen('mobile') {
-            display: none;
-        }
-        @media(max-width: 480px) {
-            padding: 0;
-        }
-        >ul {
-            display: flex;
-            @include li-reset;
-            @include screen('tablet') {
-                flex-wrap: wrap;
-            }
-            >li {
-                flex: 1 1 16%;
-                box-sizing: border-box;
-                @include screen('tablet') {
-                    flex: 1 1 31%;
-                    margin: 0 1.16% 30px;
-                }
-                @include screen('mobile') {
-                    flex: 1 1 48%;
-                    margin: 0 1% 30px;
-                }
-                // @media(max-width: 480px){
-                //     flex:1 1 100%;
-                //     margin:0 0 30px;
-                // }
-                >a {
-                    line-height: 1.2;
-                    display: block;
-                    font-weight: bold;
-                    padding: .5em 0px;
-                    box-sizing: border-box;
-                    &:hover {
-                        box-shadow: none;
-                    }
-                    span {
-                        display: block;
-                        font-family: 'Arya', sans-serif;
-                        font-weight: 400;
-                        color: $color-gray;
-                        font-size: 1.125em;
-                    }
-                }
-                ul {
-                    // display: flex;
-                    // flex-direction:column;
-                    // flex-wrap:wrap;
-                    display: block;
-                    margin: 0;
-                    padding: 0 1em 0 0;
-                    @include li-reset;
-                    @include screen('mobile') {
-                        width: auto;
-                    }
-                    li {
-                        // flex: 0 0 100%;
-                        a {
-                            display: block;
-                            @include aSetting_nocolor;
-                            font-weight: normal;
-                            text-align: left;
-                            font-size: .938em;
-                            line-height: 1.5em;
-                            padding: .5em 0;
-                            background: none;
-                            color: $color-gray;
-                            span {
-                                display: block;
-                                font-family: 'Arya', sans-serif;
-                                font-weight: 400;
-                                color: $color-gray;
-                                font-size: 1.125em;
-                            }
-                        }
-                    }
-                    //第三層關閉
-                    ul {
-                        display: none;
-                    }
-                }
-            }
-        }
+    @media (max-width: 480px) {
+      padding: 0;
     }
-    // fatfooter data start
-    .data_group {
-        display: flex;
+    > ul {
+      display: flex;
+      @include li-reset;
+      @include screen('tablet') {
         flex-wrap: wrap;
-        position: relative;
-        z-index: 1;
-        @media(max-width: 480px) {
-            justify-content: center;
+      }
+      > li {
+        flex: 1 1 16%;
+        box-sizing: border-box;
+        @include screen('tablet') {
+          flex: 1 1 31%;
+          margin: 0 1.16% 30px;
         }
-        // 追蹤及聯絡我們
-        .track_block {
-            flex: 1 1 auto;
-            flex-basis: 50%;
-            display: flex;
-            align-items: center;
-            @include screen('tablet') {
-                flex-basis: 100%;
-            }
-            @media(max-width:480px) {
+        @include screen('mobile') {
+          flex: 1 1 48%;
+          margin: 0 1% 30px;
+        }
+        // @media(max-width: 480px){
+        //     flex:1 1 100%;
+        //     margin:0 0 30px;
+        // }
+        > a {
+          line-height: 1.2;
+          display: block;
+          font-weight: bold;
+          padding: 0.5em 0px;
+          box-sizing: border-box;
+          &:hover {
+            box-shadow: none;
+          }
+          span {
+            display: block;
+            font-family: 'Arya', sans-serif;
+            font-weight: 400;
+            color: $color-gray;
+            font-size: 1.125em;
+          }
+        }
+        ul {
+          // display: flex;
+          // flex-direction:column;
+          // flex-wrap:wrap;
+          display: block;
+          margin: 0;
+          padding: 0 1em 0 0;
+          @include li-reset;
+          @include screen('mobile') {
+            width: auto;
+          }
+          li {
+            // flex: 0 0 100%;
+            a {
+              display: block;
+              @include aSetting_nocolor;
+              font-weight: normal;
+              text-align: left;
+              font-size: 0.938em;
+              line-height: 1.5em;
+              padding: 0.5em 0;
+              background: none;
+              color: $color-gray;
+              span {
                 display: block;
-                margin: 0 0 10px;
-                text-align: center;
+                font-family: 'Arya', sans-serif;
+                font-weight: 400;
+                color: $color-gray;
+                font-size: 1.125em;
+              }
             }
-            .title {
-                flex: 0 0 auto;
-                color: $primaryColor;
-                font-weight: bolder;
-                margin-right: 1em;
-                span {
-                    display: block;
-                    font-family: 'Arya', sans-serif;
-                    font-weight: 400;
-                    color: $color-gray;
-                    font-size: 1.125em;
-                }
-                @media(max-width:480px) {
-                    margin: 0 0 10px;
-                }
-            }
-            .track_list {
-                flex: 1 1 auto;
-                ul {
-                    margin: 0;
-                    padding: 0;
-                    list-style-type: none;
-                    display: flex;
-                    @media(max-width: 480px) {
-                        justify-content: center;
-                    }
-                    li {
-                        margin-right: 10px;
-                        a {
-                            display: block;
-                            transition: .5s;
-                            &:hover {
-                                transform: scale(1.1);
-                            }
-                        }
-                    }
-                }
-            }
+          }
+          //第三層關閉
+          ul {
+            display: none;
+          }
         }
-        // 平台資訊服務
-        .platform_service {
-            flex: 1 1 auto;
-            flex-basis: 50%;
-            display: flex;
-            align-items: center;
-            @include screen('tablet') {
-                flex-basis: 100%;
-            }
-            @media(max-width:480px) {
-                display: block;
-                margin: 0 0 0;
-                text-align: center;
-            }
-            .title {
-                flex: 0 0 auto;
-                color: $primaryColor;
-                font-weight: bolder;
-                margin-right: 1em;
-                span {
-                    display: block;
-                    font-family: 'Arya', sans-serif;
-                    font-weight: 400;
-                    color: $color-gray;
-                    font-size: 1.125em;
-                }
-                @media(max-width:480px) {
-                    margin: 0 0 10px;
-                }
-            }
-            .platform_content {
-                button {
-                    &.btnstyle {
-                        padding: 12px 20px;
-                        text-align: center;
-                        background: rgb(255, 130, 15);
-                        background: linear-gradient(180deg, rgba(255, 130, 15, 1) 0%, rgba(246, 104, 0, 1) 100%);
-                        color: $primaryColor;
-                        border: none;
-                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-                        font-size: 1.125em;
-                        font-weight: bolder;
-                        font-family: 'Arya', sans-serif;
-                        font-weight: 700;
-                        &:hover {
-                            background: rgb(246, 104, 0);
-                            background: linear-gradient(180deg, rgba(246, 104, 0, 1) 0%, rgba(212, 91, 2, 1) 100%);
-                        }
-                        &:focus {
-                            box-shadow: 0 0px 0px 2px $aFocus inset;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+  // fatfooter data start
+  .data_group {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    @media (max-width: 480px) {
+      justify-content: center;
+    }
+    // 追蹤及聯絡我們
+    .track_block {
+      flex: 1 1 auto;
+      flex-basis: 50%;
+      display: flex;
+      align-items: center;
+      @include screen('tablet') {
+        flex-basis: 100%;
+      }
+      @media (max-width: 480px) {
+        display: block;
+        margin: 0 0 10px;
+        text-align: center;
+      }
+      .title {
+        flex: 0 0 auto;
+        color: $primaryColor;
+        font-weight: bolder;
+        margin-right: 1em;
+        span {
+          display: block;
+          font-family: 'Arya', sans-serif;
+          font-weight: 400;
+          color: $color-gray;
+          font-size: 1.125em;
+        }
+        @media (max-width: 480px) {
+          margin: 0 0 10px;
+        }
+      }
+      .track_list {
+        flex: 1 1 auto;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          display: flex;
+          @media (max-width: 480px) {
+            justify-content: center;
+          }
+          li {
+            margin-right: 10px;
+            a {
+              display: block;
+              transition: 0.5s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+    // 平台資訊服務
+    .platform_service {
+      flex: 1 1 auto;
+      flex-basis: 50%;
+      display: flex;
+      align-items: center;
+      @include screen('tablet') {
+        flex-basis: 100%;
+      }
+      @media (max-width: 480px) {
+        display: block;
+        margin: 0 0 0;
+        text-align: center;
+      }
+      .title {
+        flex: 0 0 auto;
+        color: $primaryColor;
+        font-weight: bolder;
+        margin-right: 1em;
+        span {
+          display: block;
+          font-family: 'Arya', sans-serif;
+          font-weight: 400;
+          color: $color-gray;
+          font-size: 1.125em;
+        }
+        @media (max-width: 480px) {
+          margin: 0 0 10px;
+        }
+      }
+      .platform_content {
+        button {
+          &.btnstyle {
+            padding: 12px 20px;
+            text-align: center;
+            background: rgb(255, 130, 15);
+            background: linear-gradient(180deg, rgba(255, 130, 15, 1) 0%, rgba(246, 104, 0, 1) 100%);
+            color: $primaryColor;
+            border: none;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            font-size: 1.125em;
+            font-weight: bolder;
+            font-family: 'Arya', sans-serif;
+            font-weight: 700;
+            &:hover {
+              background: rgb(246, 104, 0);
+              background: linear-gradient(180deg, rgba(246, 104, 0, 1) 0%, rgba(212, 91, 2, 1) 100%);
+            }
+            &:focus {
+              box-shadow: 0 0px 0px 2px $aFocus inset;
+            }
+          }
+        }
+      }
+    }
+  }
 }
